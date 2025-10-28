@@ -1,4 +1,4 @@
-# youtube_videos_idea_generator
+## youtube_videos_idea_generator
 ## 🚀 How to Run the Project
 
 This is an AI-powered YouTube Video Idea Generator using FastAPI (backend) and Streamlit (frontend). Follow the steps below to run it locally:
@@ -19,6 +19,8 @@ conda activate euron_yt_idea_generator
 
 ### 📁 3. Install Dependencies
 
+ cd backend
+ 
 ```bash
 pip install -r requirements.txt
 ```
@@ -41,7 +43,7 @@ OPENAI_API_KEY=your_openai_api_key
 ### ⚙️ 5. Run the Backend (FastAPI)
 
 ```bash
-uvicorn backend.main:app --reload
+uvicorn main:app --reload
 ```
 
 - The backend will run at: `http://127.0.0.1:8000`
@@ -52,6 +54,8 @@ uvicorn backend.main:app --reload
 ### 🎯 6. Run the Frontend (Streamlit)
 
 In a **new terminal** (with the same environment activated), run:
+
+ cd backend
 
 ```bash
 streamlit run app.py

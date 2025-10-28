@@ -2,8 +2,8 @@ from fastapi import FastAPI, Query
 import os
 from dotenv import load_dotenv
 import requests
-from .google_trends import get_trending_keywords
-from .youtube_trends import get_youtube_trending_videos
+from google_trends import get_trending_keywords
+from youtube_trends import get_youtube_trending_videos
 # Load environment variables from .env file
 load_dotenv()
 
