@@ -1,13 +1,9 @@
 from fastapi import FastAPI, Query
-from fastapi.middleware.cors import CORSMiddleware  # <-- 1. IMPORTED THIS
 import os
 from dotenv import load_dotenv
 import requests
-
-# 2. FIXED IMPORTS (removed the leading dot '.')
 from google_trends import get_trending_keywords
 from youtube_trends import get_youtube_trending_videos
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -18,22 +14,6 @@ if not EURI_API_KEY:
 
 # Set up the FastAPI app
 app = FastAPI()
-
-# 3. ADDED CORS MIDDLEWARE BLOCK
-# This allows your frontend (on a different URL) to call your backend
-origins = [
-    "http://localhost:8501",  # For local Streamlit testing
-    "https://your-frontend-app-name.onrender.com"  # <-- IMPORTANT: REPLACE THIS
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
-    allow_headers=["*"],
-)
-
 
 @app.get('/generate_ideas/')
 def generate_video_ideas(

@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 # Backend API URL
-API_URL = "https://yt-video-idea-gen.onrender.com"
+API_URL = "http://127.0.0.1:8000/generate_ideas/"
 st.title("🎬 AI-Powered YouTube Idea Generator")
 # Input fields
 topic = st.text_input("Enter a topic:", "Artificial Intelligence")
